@@ -37,8 +37,6 @@ namespace HouseRentingSystem.Tests.UnitTests
             Assert.AreEqual(this.Agent.User.Email, resultHouse.AgentEmail);
             Assert.AreEqual(this.Agent.User.FirstName + " " + this.Agent.User.LastName,
                 resultHouse.AgentFullName);
-            Assert.IsNull(resultHouse);
-            Assert.AreEqual(this.Agent.User.Email, "test@test.test");
         }
     }
 }
