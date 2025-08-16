@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('Restore') {
             steps {
-                sh 'dotnet restore HouseRentingSystem.sln'
+                bat 'dotnet restore HouseRentingSystem.sln'
             }
         }
         stage('Build') {
             steps {
-                sh 'dotnet build HouseRentingSystem.sln --configuration Release'
+                bat 'dotnet build HouseRentingSystem.sln --configuration Release'
             }
         }
         stage('Test') {
             steps {
-                sh 'dotnet test HouseRentingSystem.Tests/HouseRentingSystem.Tests.csproj'
+                bat 'dotnet test HouseRentingSystem.Tests/HouseRentingSystem.Tests.csproj'
             }
         }
     }
