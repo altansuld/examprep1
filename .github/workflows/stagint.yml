@@ -1,8 +1,8 @@
 name: unitest
-
+  
 on:
   push:
-    branches: [ "staging" ]
+    branches: [ "staging", "develop" ]
 
 jobs:
   build:
@@ -21,5 +21,8 @@ jobs:
     - name: Build
       run: dotnet build HouseRentingSystem.sln --configuration Release --no-restore
 
-    - name: Test
+    - name: UnitTests
+      run:  dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csprojv
+
+    - name: IntegretionTeststs
       run:  dotnet test HouseRentingSystem.Tests/HouseRentingSystem.Tests.csproj
